@@ -4,7 +4,6 @@ class UserMailer < ActionMailer::Base
   def new_office_hours
     host = Slot.last.host
     User.all.each do |user|
-      #@url  = "http://example.com/login"
       mail(:to => user.email, :subject => "#{host} just added office hours")
     end
   end

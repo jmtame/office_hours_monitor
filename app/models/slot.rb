@@ -11,7 +11,7 @@ class Slot < ActiveRecord::Base
     # Create the session
     form = agent.page.forms.first
     form.u = 'jmtame'
-    form.p = APP_CONFIG['YC_PW'] || ENV['YC_PW']
+    form.p = ENV['YC_PW']
     logged_in_page = form.submit form.buttons.first
 
     # Parse out the date, time, and host
