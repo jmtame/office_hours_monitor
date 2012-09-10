@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "notify@office-hours-monitor.herokuapp.com"
+  default from: "jmtame@gmail.com"
 
   def new_office_hours
     host = Slot.last.host
