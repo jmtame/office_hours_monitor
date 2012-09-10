@@ -28,6 +28,8 @@ class Slot < ActiveRecord::Base
   end
 
   def notify
-    UserMailer.new_office_hours
+    User.all.each do |user|
+      UserMailer.new_office_hours(user).deliver
+    end
   end
 end
