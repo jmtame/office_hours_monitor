@@ -5,6 +5,7 @@ class UserMailer < ActionMailer::Base
     host = Slot.last.host
     User.all.each do |user|
       mail(:to => user.email, :subject => "#{host} just added office hours")
+      puts "mailed #{user.name}"
     end
   end
 end
